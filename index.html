@@ -33,17 +33,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <form class="d-flex" action="search.html" method="get">
-                            <input class="form-control me-2" type="search" name="q" placeholder="Buscar Película" aria-label="Buscar">
+                        <form id="searchForm" class="d-flex">
+                            <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar Película" aria-label="Buscar">
                             <button class="btn btn-outline-light" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-search" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85zm-5.441 0A5.5 5.5 0 1 1 10.5 5a5.5 5.5 0 0 1-4.199 5.344z"/>
                                 </svg>
                             </button>
                         </form>
+                        
+                        
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="single-movie.html">Valoraciones</a>
+                        <a class="nav-link" href="single.html">Valoraciones</a>
                     </li>
                 </ul>
             </div>
@@ -111,9 +113,9 @@
                     <div class="col-12">
                         <div class="row">
                             <!-- Primera película -->
-                            <div class="col-md-3 mb-4">
+                            <div class="col-md-3 mb-4" data-titulo="The Wild Robot" data-genero="Animación, Aventura, Ciencia Ficción">
                                 <div class="col rounded shadow">
-                                    <img src="assets/img/single1.jpg"  class="img-fluid cartelera-img rounded-top" alt="imagen">
+                                    <img src="assets/img/single1.jpg" class="img-fluid cartelera-img rounded-top" alt="imagen">
                                     <div class="fs-4 fw-bold text-start mb-2">The Wild Robot</div>
                                     <div class="fs-6 fw-semibold text-start mb-2">Título en español: Robot Salvaje</div>
                                     <div class="fs-6 text-start mb-2">Estreno: 15-10-2024</div>
@@ -128,6 +130,25 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="col-md-3 mb-4" data-titulo="Beetlejuice" data-genero="Comedia, Fantasía">
+                                <div class="col rounded shadow">
+                                    <img src="assets/img/betle.jpg" class="img-fluid cartelera-img rounded-top" alt="imagen">
+                                    <div class="fs-4 fw-bold text-start mb-2">Beetlejuice</div>
+                                    <div class="fs-6 fw-semibold text-start mb-2">Título en español: Beetlejuice</div>
+                                    <div class="fs-6 text-start mb-2">Estreno: 18-12-2024</div>
+                                    <div class="fs-6 text-start mb-2">Género: Comedia, Fantasía</div>
+                                    <div class="d-grid gap-2">
+                                    <div class="bg-secondary rounded p-1 text-start text-muted">
+                <span class="fw-semibold">Clasificación: </span> PG
+            </div>
+            <div class="bg-primary rounded p-1 text-start text-light">
+                <span class="fw-semibold">Duración: </span> 150m
+            </div>
+        </div>
+    </div>
+</div>
+
             
                             <!-- Segunda película -->
                             <div class="col-md-3 mb-4">
@@ -420,7 +441,7 @@
                             <div class="col-md-3 mb-4">
                                 <div class="col rounded shadow">
                                     <img src="assets/img/dragon.jpg"  class="img-fluid cartelera-img rounded-top" alt="imagen">
-                                    <div class="fs-4 fw-bold text-start mb-2">The Wild Robot</div>
+                                    <div class="fs-4 fw-bold text-start mb-2">The </div>
                                     <div class="fs-6 fw-semibold text-start mb-2">Título en español: Robot Salvaje</div>
                                     <div class="fs-6 text-start mb-2">Estreno: 15-10-2024</div>
                                     <div class="fs-6 text-start mb-6">Género: Animación, Aventura, Ciencia Ficción</div>
@@ -494,6 +515,38 @@
             html.classList.toggle('dark');
         });
     </script>
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Detiene el envío del formulario
+    
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const peliculas = document.querySelectorAll("[data-titulo]");
+            let encontrada = false;
+    
+            peliculas.forEach(pelicula => {
+                const titulo = pelicula.getAttribute("data-titulo").toLowerCase();
+                
+                // Verifica si la consulta está incluida en el título
+                if (titulo.includes(query)) {
+                    pelicula.scrollIntoView({ behavior: "smooth", block: "center" }); // Desplaza hacia la película encontrada
+                    pelicula.style.border = "3px solid yellow"; // Resalta la película
+                    encontrada = true;
+    
+                    // Elimina el resaltado después de unos segundos
+                    setTimeout(() => {
+                        pelicula.style.border = "";
+                    }, 3000);
+                }
+            });
+    
+            // Muestra una alerta si no se encuentra ninguna coincidencia
+            if (!encontrada) {
+                alert("Película no encontrada.");
+            }
+        });
+    </script>
+    
+    
             
                    
 </body>
