@@ -1,0 +1,68 @@
+:root {
+    --bg-color: white; 
+    --text-color: black; 
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+}
+
+.btn {
+    background-color: var(--text-color); 
+    color: var(--bg-color); 
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+
+.end-0 {
+    right: 0;
+}
+
+.m-4 {
+    margin: 16px;
+}
+
+.shadow-lg {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rounded-circle {
+    border-radius: 50%;
+}
+
+.p-3 {
+    padding: 12px;
+}
+.cartelera-img {
+    height: 500px; 
+    object-fit: cover; 
+    width: 100%; 
+}
+.exhibidos{
+    height: 400px; 
+    object-fit: cover; 
+    width: 100%; 
+}
