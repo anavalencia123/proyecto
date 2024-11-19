@@ -56,13 +56,13 @@ body {
 .p-3 {
     padding: 12px;
 }
-.cartelera-img {
+
+
+.full-width-img {
+    width: 100vw; 
     height: 500px; 
     object-fit: cover; 
-    width: 100%; 
+    margin: 0; 
 }
-.exhibidos{
-    height: 400px; 
-    object-fit: cover; 
-    width: 100%; 
-}
+
+
