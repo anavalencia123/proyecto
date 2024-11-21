@@ -1,185 +1,434 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-
 <style>
   .exhibidos{
     height: 300px; /* Altura fija para todas las imágenes */
     object-fit: cover; /* Asegura que la imagen cubra el área asignada, recortándola si es necesario */
     width: 100%; /* Asegura que la imagen cubra todo el ancho del contenedor */
 }
-</style>
-  <body class="bg-dark">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold fs-4" href="index.html">PE-CARLOS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <form class="d-flex" action="search.html" method="get">
-                            <input class="form-control me-2" type="search" name="q" placeholder="Buscar Película" aria-label="Buscar">
-                            <button class="btn btn-outline-light" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-search" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85zm-5.441 0A5.5 5.5 0 1 1 10.5 5a5.5 5.5 0 0 1-4.199 5.344z"/>
-                                </svg>
-                            </button>
-                        </form>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="single-movie.html">Valoraciones</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!---SECTION - BANNERr-->
-
-
-    <div class="container mx-auto">
-
-        <div class="banner mt-2 bg-no-repeat bg-center bg-cover" style="background-image: url('assets/img/lol.jpg'); height: 300px; background-size: cover;">
-        </div>
 
 
 
-    <div class="row mt-4">
-        <div class="col-3">
-            <div class="card h-100 shadow">
-                <img src="assets/img/" class="card-img-top exhibidos w-100" alt="imagen">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card h-100 shadow">
-                <img src="assets/img/" class="card-img-top exhibidos w-100" alt="imagen">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card h-100 shadow">
-                <img src="assets/img/" class="card-img-top exhibidos w-100" alt="imagen">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card h-100 shadow">
-                <img src="assets/img/" class="card-img-top exhibidos w-100" alt="imagen">
-            </div>
-        </div>
+h2{
+  color:aliceblue;
+}
+
+.custom-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.review{
+  height: 130px;
+}
+
+.aclamadas {
+  height: 140px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #e1e1e1;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+  
+</style>  
+  
+  
+  <!---SECTION - BANNERr-->
+  <div class="container mx-auto">
+
+    <div class="col-8 mx-auto banner mt-2 bg-no-repeat bg-center bg-cover" style="background-image: url('assets/img/wildrobot.jpg'); height: 150px; background-size: cover; background-position: center;">
     </div>
 
+    <div class="mt-4 mb-4">
+      <h4>Populares:</h4>
+      <hr>
+  </div>
 
-
-    <div class="container my-5">
+  
+  <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel"> 
+    <div class="carousel-inner">
+      <!-- Primer elemento del carrusel -->
+      <div class="carousel-item active">
         <div class="row">
-          <div class="col-md-8">
-            <h2>POPULAR REVIEWS THIS WEEK</h2>
-            <div class="list-group">
-              <div class="list-group-item">
-                <div class="d-flex">
-                  <img src="ruta_de_la_imagen_anora.jpg" alt="Anora" class="img-thumbnail me-3" style="width: 100px;">
-                  <div>
-                    <h5>Anora (2024)</h5>
-                    <p><strong>Reviewer:</strong> Mike Flanagan</p>
-                    <p>"Mikey Madison is superb in this very unique effort from Sean Baker. PRETTY WOMAN comparisons don’t hold up beyond some basic plot set-up, and after the stage is set, the film is utterly unpredictable, quite funny, and hides surprising depth. One of the best I’ve seen this year."</p>
-                    <p><strong>Likes:</strong> 2,597 <strong>Comments:</strong> 17</p>
-                  </div>
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="d-flex">
-                  <img src="ruta_de_la_imagen_heretic.jpg" alt="Heretic" class="img-thumbnail me-3" style="width: 100px;">
-                  <div>
-                    <h5>Heretic (2024)</h5>
-                    <p><strong>Reviewer:</strong> sammmmbennett</p>
-                    <p>"no fucking way hugh grant just compared jesus to jar jar binks"</p>
-                    <p><strong>Likes:</strong> 7,370 <strong>Comments:</strong> 45</p>
-                  </div>
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="d-flex">
-                  <img src="ruta_de_la_imagen_look_back.jpg" alt="Look Back" class="img-thumbnail me-3" style="width: 100px;">
-                  <div>
-                    <h5>Look Back (2024)</h5>
-                    <p><strong>Reviewer:</strong> James (Schaffrillas)</p>
-                    <p>"We were gonna make so many things together. We were going to put out art that would matter to people and affect their lives. We were going to do it together."</p>
-                    <p><strong>Likes:</strong> Not specified <strong>Comments:</strong> Not specified</p>
-                  </div>
-                </div>
+          <div class="col-3">
+            <div class="card h-100 shadow">
+              <img src="assets/img/pelicula.jpg" class="card-img-top exhibidos w-100" alt="imagen">
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary d-flex align-items-center">
+                  <img src="assets/img/3738.png" alt="" class="me-2" >45k
+                </button>
+                <button type="button" class="btn btn-secondary d-flex align-items-center">
+                  <img src="assets/img/17402.png" alt="" class="me-2" >38k
+                </button>
+                <button type="button" class="btn btn-success d-flex align-items-center">
+                  <img src="assets/img/30571.png" alt="" class="me-2">55k
+                </button>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <h2>POPULAR LISTS</h2>
-            <div class="list-group">
-              <div class="list-group-item">
-                <div class="d-flex">
-                  <img src="ruta_de_la_imagen_romcoms.jpg" alt="romcoms" class="img-thumbnail me-3" style="width: 100px;">
-                  <div>
-                    <h5>romcoms para combatir la depresion de un domingo</h5>
-                    <p><strong>Likes:</strong> Not specified <strong>Comments:</strong> Not specified</p>
-                  </div>
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="d-flex">
-                  <img src="ruta_de_la_imagen_horror.jpg" alt="horror" class="img-thumbnail me-3" style="width: 100px;">
-                  <div>
-                    <h5>100 Highest-Rated Underseen Horror Films</h5>
-                    <p><strong>Likes:</strong> Not specified <strong>Comments:</strong> Not specified</p>
-                  </div>
-                </div>
+          <!-- Resto de las imágenes en este carrusel -->
+          <div class="col-3">
+            <div class="card h-100 shadow">
+              <img src="assets/img/images.jpg" class="card-img-top exhibidos w-100" alt="imagen">
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary d-flex align-items-center">
+                  <img src="assets/img/3738.png" alt="" class="me-2" >27k
+                </button>
+                <button type="button" class="btn btn-secondary d-flex align-items-center">
+                  <img src="assets/img/17402.png" alt="" class="me-2" >18k
+                </button>
+                <button type="button" class="btn btn-success d-flex align-items-center">
+                  <img src="assets/img/30571.png" alt="" class="me-2" >22k
+                </button>
               </div>
             </div>
           </div>
+          <div class="col-3">
+            <div class="card h-100 shadow">
+              <img src="assets/img/imstill.jpg" class="card-img-top exhibidos w-100" alt="imagen">
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary d-flex align-items-center">
+                  <img src="assets/img/3738.png" alt="" class="me-2" >107k
+                </button>
+                <button type="button" class="btn btn-secondary d-flex align-items-center">
+                  <img src="assets/img/17402.png" alt="" class="me-2" >67k
+                </button>
+                <button type="button" class="btn btn-success d-flex align-items-center">
+                  <img src="assets/img/30571.png" alt="" class="me-2" >100k
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card h-100 shadow">
+              <img src="assets/img/thepenguin.jpg" class="card-img-top exhibidos w-100" alt="imagen">
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary d-flex align-items-center">
+                  <img src="assets/img/3738.png" alt="" class="me-2" >70k
+                </button>
+                <button type="button" class="btn btn-secondary d-flex align-items-center">
+                  <img src="assets/img/17402.png" alt="" class="me-2" >62k
+                </button>
+                <button type="button" class="btn btn-success d-flex align-items-center">
+                  <img src="assets/img/30571.png" alt="" class="me-2" >69k
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Segundo elemento del carrusel  -->
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-3">
+            <div class="card h-100 shadow">
+              <img src="assets/img/temporada-4.jpg" class="card-img-top exhibidos w-100" alt="imagen">
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary d-flex align-items-center">
+                  <img src="assets/img/3738.png" alt="" class="me-2" >130k
+                </button>
+                <button type="button" class="btn btn-secondary d-flex align-items-center">
+                  <img src="assets/img/17402.png" alt="" class="me-2" >95k
+                </button>
+                <button type="button" class="btn btn-success d-flex align-items-center">
+                  <img src="assets/img/30571.png" alt="" class="me-2" >127k
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card h-100 shadow">
+              <img src="assets/img/superman.jpg" class="card-img-top exhibidos w-100" alt="imagen">
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary d-flex align-items-center">
+                  <img src="assets/img/3738.png" alt="" class="me-2" >74k
+                </button>
+                <button type="button" class="btn btn-secondary d-flex align-items-center">
+                  <img src="assets/img/17402.png" alt="" class="me-2" >53k
+                </button>
+                <button type="button" class="btn btn-success d-flex align-items-center">
+                  <img src="assets/img/30571.png" alt="" class="me-2" >71k
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card h-100 shadow">
+              <img src="assets/img/smile.jpg" class="card-img-top exhibidos w-100" alt="imagen">
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary d-flex align-items-center">
+                  <img src="assets/img/3738.png" alt="" class="me-2" >69k
+                </button>
+                <button type="button" class="btn btn-secondary d-flex align-items-center">
+                  <img src="assets/img/17402.png" alt="" class="me-2" >36k
+                </button>
+                <button type="button" class="btn btn-success d-flex align-items-center">
+                  <img src="assets/img/30571.png" alt="" class="me-2" >67k
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card h-100 shadow">
+              <img src="assets/img/venom.jpg" class="card-img-top exhibidos w-100" alt="imagen">
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary d-flex align-items-center">
+                  <img src="assets/img/3738.png" alt="" class="me-2" >51k
+                </button>
+                <button type="button" class="btn btn-secondary d-flex align-items-center">
+                  <img src="assets/img/17402.png" alt="" class="me-2" >47k
+                </button>
+                <button type="button" class="btn btn-success d-flex align-items-center">
+                  <img src="assets/img/30571.png" alt="" class="me-2" >50k
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Controles del carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+<!-- Banner medio -->
+<div class="banner mt-5 bg-no-repeat bg-center bg-cover mb-4" style="background-image: url('assets/img/banner1.jpg'); height: 150px; background-size: cover; background-position: center;">
+</div>
+
+<div class="mt-4 mb-4">
+  
+  <h4>Recien Visto.</h4>
+  <hr>
+
+</div>
+
+<!-- Banner de imagenes -->
+<div class="container-fluid">
+  <div class="row g-0">
+    <div class="col-1">
+      <img src="assets/img/venom.jpg" alt="Imagen 1" class="image-button img-fluid custom-image" onclick="alert('Imagen 1 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/smile.jpg" alt="Imagen 2" class="image-button img-fluid custom-image" onclick="alert('Imagen 2 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/conte.png" alt="Imagen 3" class="image-button img-fluid custom-image" onclick="alert('Imagen 3 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/the.jpg" alt="Imagen 4" class="image-button img-fluid custom-image" onclick="alert('Imagen 4 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/it.jpg" alt="Imagen 5" class="image-button img-fluid custom-image" onclick="alert('Imagen 5 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/myheroe.jpg" alt="Imagen 6" class="image-button img-fluid custom-image" onclick="alert('Imagen 6 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/h.jpg" alt="Imagen 7" class="image-button img-fluid custom-image" onclick="alert('Imagen 7 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/helboy.jpg" alt="Imagen 8" class="image-button img-fluid custom-image" onclick="alert('Imagen 8 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/files.png" alt="Imagen 9" class="image-button img-fluid custom-image" onclick="alert('Imagen 9 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/superman.jpg" alt="Imagen 10" class="image-button img-fluid custom-image" onclick="alert('Imagen 10 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/superman.jpg" alt="Imagen 10" class="image-button img-fluid custom-image" onclick="alert('Imagen 10 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+    <div class="col-1">
+      <img src="assets/img/superman.jpg" alt="Imagen 10" class="image-button img-fluid custom-image" onclick="alert('Imagen 10 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-9">
+      <h4>Reseñas Populares de esta Semana</h4>
+      <hr>
+      <div class="row">
+        <!-- Imagen de la película -->
+        <div class="col-1 p-0 d-flex align-items-start">
+          <img src="assets/img/superman.jpg" class="img-fluid review">
+        </div>
+      
+        <!-- Información del revisor (nombre e imagen) -->
+        <div class="col-12 col-md-4 m-2 p-0">
+          <h4 class="m-0">Anora 2024</h4>
+          <div class="d-flex align-items-center mb-2">
+            <img src="assets/img/myheroe.jpg" alt="Reviewer Image" class="rounded-circle me-3" style="width: 50px; height: 50px;">
+            <p class="mb-0"><strong>Reviewer:</strong> Mike Flanagan</p>
+          </div>
+          <!-- Párrafo debajo del revisor -->
+          <p class="text-justify">
+            Mikey Madison is superb in this very unique effort from Sean Baker. PRETTY WOMAN comparisons aren't really relevant beyond some basic plot set-up, and after the stage is set, the film is utterly unpredictable, quite funny, and hides surprising depth. One of the best I've seen this year.
+          </p>
         </div>
       </div>
       
 
-</div>
-
-   
-
-<footer class="bg-secondary text-white py-4 mt-4">
-    <div class="container">
+        
+    
+       <!-- Cierre de .list-group -->
+    </div> <!-- Cierre de .col-md-9 -->
+    
+    <!---CODIGO PARA VISUALIZARCOMENTARIOS Y COMENTARISTAS-->
+    <div class="col-md-3">
+      <h4>Aclamadas</h4>
+      <hr>
+      
       <div class="row">
-        <div class="col-md-3">
-          <h5>About</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Pro</a></li>
-            <li><a href="#" class="text-white">News</a></li>
-            <li><a href="#" class="text-white">Apps</a></li>
-            <li><a href="#" class="text-white">Podcast</a></li>
-            
-          </ul>
+        <div class="col-12 d-flex flex-row mb-3">
+          <div class="col-4 h-100 px-1"> <!-- Se añadió px-2 para separación entre las columnas -->
+            <img src="assets/img/venom.jpg" alt="Imagen 1" class="image-button img-fluid aclamadas" onclick="alert('Imagen 1 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+          </div>
+          <div class="col-4 px-1"> <!-- Se añadió px-2 para separación entre las columnas -->
+            <img src="assets/img/smile.jpg" alt="Imagen 2" class="image-button img-fluid aclamadas" onclick="alert('Imagen 2 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+          </div>
+          <div class="col-4 px-1"> <!-- Se añadió px-2 para separación entre las columnas -->
+            <img src="assets/img/conte.png" alt="Imagen 3" class="image-button img-fluid aclamadas" onclick="alert('Imagen 3 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+          </div>
         </div>
-        <div class="col-md-3">
-          <h5>Follow Us</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white"><i class="fab fa-twitter"></i> Twitter</a></li>
-            <li><a href="#" class="text-white"><i class="fab fa-facebook"></i> Facebook</a></li>
-            <li><a href="#" class="text-white"><i class="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="#" class="text-white"><i class="fab fa-tiktok"></i> TikTok</a></li>
-            <li><a href="#" class="text-white"><i class="fab fa-youtube"></i> YouTube</a></li>
-          </ul>
+   
+        
+        <div class="col-12 d-flex flex-row mb-3">
+          <div class="col-4 ">
+            <img src="assets/img/venom.jpg" alt="Imagen 1" class="image-button img-fluid aclamadas p-2" onclick="alert('Imagen 1 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+          </div>
+          <div class="col-4 ">
+            <img src="assets/img/smile.jpg" alt="Imagen 2" class="image-button img-fluid aclamadas p-2" onclick="alert('Imagen 2 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+          </div>
+          <div class="col-4 ">
+            <img src="assets/img/conte.png" alt="Imagen 3" class="image-button img-fluid aclamadas p-2" onclick="alert('Imagen 3 clickeada')" onmouseover="this.style.border='3px solid blue'" onmouseout="this.style.border='none'">
+          </div>
         </div>
-        <div class="col-md-6 text-center">
-          <p>&copy; Letterboxd Limited. Made by fans in Aotearoa New Zealand. Film data from TMDb. Mobile site.</p>
-          <a href="#" class="btn btn-primary">NEED AN UPGRADE? Stats, fave streamers, no ads, more!</a>
+        <!-- Cierre de .col -->
+      </div> <!-- Cierre de .row -->
+    </div> <!-- Cierre de .col-md-3 -->
+    
+    
+  </div> <!-- Cierre de .row -->
+</div> <!-- Cierre de .container -->
+
+
+    
+
+
+
+
+      
+      
+    <!---CODIGO PARA TARJETAS CARDS-->
+    <h2>Noticias Populares</h2>
+    <hr style="border: 0; border-top: 2px solid #007bff; width: 100%; margin-left: 0;">
+  
+    <!-- Contenedor para la cuadrícula estilo Masonry -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="assets/img/myheroe.jpg" alt="Noticia 1" class="card-img-top" style="height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">My Hero Academia: You're Next (2024)</h5>
+            <p class="card-text">"En una sociedad devastada por los efectos de una guerra total, aparece de repente una misteriosa fortaleza gigante que se traga ciudades..."</p>
+            <button type="button" class="btn btn-success" style="border: none; background: none; font-size: 20px; font-weight: bold; color: black; cursor: pointer; display: flex; align-items: flex-start;"> Lee más</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="assets/img/section2.jpg" alt="Noticia 2" class="card-img-top" style="height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">Le Regne Animal (2024)</h5>
+            <p class="card-text">"En un mundo azotado por una oleada de mutaciones que transforman a los humanos en animales, François hace todo lo posible por salvar a su mujer. Él y su hijo se embarcan en una búsqueda que cambiará sus vidas"</p>
+            <button type="button" class="btn btn-success" style="border: none; background: none; font-size: 20px; font-weight: bold; color: black; cursor: pointer; display: flex; align-items: flex-start;"> Lee más</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="assets/img/temporada-4.jpg" alt="Noticia 3" class="card-img-top" style="height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">Kimetsu no Yaiba: arco de los herreros (2024)</h5>
+            <p class="card-text">"En esta temporada, Tanjiro Kamado, junto con su hermana Nezuko, se enfrentan a nuevos y poderosos enemigos en el Pueblo de los Herreros, un lugar crucial para la creación de las espadas utilizadas por los cazadores de demonios."</p>
+            <button type="button" class="btn btn-success" style="border: none; background: none; font-size: 20px; font-weight: bold; color: black; cursor: pointer; display: flex; align-items: flex-start;"> Lee más</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="assets/img/panda.jpg" alt="Noticia 4" class="card-img-top" style="height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">Panda Pop (2024)</h5>
+            <p class="card-text">"Un hermoso relato sobre un panda en busca de su propósito en el mundo."...</p>
+            <button type="button" class="btn btn-success" style="border: none; background: none; font-size: 20px; font-weight: bold; color: black; cursor: pointer; display: flex; align-items: flex-start;"> Lee más</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="assets/img/pengiun.jpg" alt="Noticia 5" class="card-img-top" style="height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">Penguin Parade (2024)</h5>
+            <p class="card-text">"Una mirada a la vida de los pingüinos en su hábitat natural, donde luchan por sobrevivir..."</p>
+            <button type="button" class="btn btn-success" style="border: none; background: none; font-size: 20px; font-weight: bold; color: black; cursor: pointer; display: flex; align-items: flex-start;"> Lee más</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="assets/img/helboy.jpg" alt="Noticia 6" class="card-img-top" style="height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">Hellboy: Reborn (2024)</h5>
+            <p class="card-text">"Finales de la Segunda Guerra Mundial. Por medio de la magia negra, los nazis conjuran al demonio Hellboy, que crece entre los aliados hasta convertirse en adulto, actuando como agente de la oficina de defensa e investigación paranormal."</p>
+            <button type="button" class="btn btn-success" style="border: none; background: none; font-size: 20px; font-weight: bold; color: black; cursor: pointer; display: flex; align-items: flex-start;"> Lee más</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="assets/img/imstill.jpg" alt="Noticia 6" class="card-img-top" style="height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">I'm Still Here (2024)</h5>
+            <p class="card-text">"El director Cassey Affleck sigue al actor Joaquin Phoenix después anunciar su retirada en 2008 del mundo de la interpretación para reinventarse a sí mismo y dedicarse a la música hip hop."</p>
+            <button type="button" class="btn btn-success" style="border: none; background: none; font-size: 20px; font-weight: bold; color: black; cursor: pointer; display: flex; align-items: flex-start;"> Lee más</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="assets/img/betle.jpg" alt="Noticia 6" class="card-img-top" style="height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">Beetlejuice (2024)</h5>
+            <p class="card-text">"¡Beetlejuice está de regreso! Después de una tragedia familiar inesperada, tres generaciones de la familia Deetz regresan a su hogar en Winter River. Aún atormentada por Beetlejuice, la vida de Lydia da un vuelco cuando su rebelde hija adolescente, Astrid, descubre el misterioso modelo de la ciudad en el ático y el portal al Más Allá se abre accidentalmente. "</p>
+            <button type="button" class="btn btn-success" style="border: none; background: none; font-size: 20px; font-weight: bold; color: black; cursor: pointer; display: flex; align-items: flex-start;"> Lee más</button>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
 
-
-</body>
-
- 
-</html>

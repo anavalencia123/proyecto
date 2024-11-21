@@ -5,10 +5,11 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
     background-color: var(--bg-color); 
     color: var(--text-color); 
-    transition: background-color 0.3s, color 0.3s; 
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -59,7 +60,7 @@ body {
 
 
 .full-width-img {
-    width: 100vw; 
+    width: 200vw; 
     height: 500px; 
     object-fit: cover; 
     margin: 0; 
